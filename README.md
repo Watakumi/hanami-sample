@@ -1,33 +1,25 @@
-# App
 
-Welcome to your new Hanami project!
+# 環境構築
+Ruby:2.7.4
+Hanami: 1.3.4
+PostgresSQL: 13.3
 
-## Setup
-
-How to run tests:
-
-```
-% bundle exec rake
-```
-
-How to run the development console:
+Dockerを使った環境構築
 
 ```
-% bundle exec hanami console
+$ docker compose build
 ```
 
-How to run the development server:
-
 ```
-% bundle exec hanami server
+$ docker compose run --rm web bundle install
 ```
 
-How to prepare (create and migrate) DB for `development` and `test` environments:
-
 ```
-% bundle exec hanami db prepare
-
-% HANAMI_ENV=test bundle exec hanami db prepare
+$ docker compose run --rm web bundle exec hanami db prepare
 ```
 
-Explore Hanami [guides](https://guides.hanamirb.org/), [API docs](http://docs.hanamirb.org/1.3.4/), or jump in [chat](http://chat.hanamirb.org) for help. Enjoy! 🌸
+```
+$ docker compose up
+```
+-> Topページが表示されたら環境構築完了
+
